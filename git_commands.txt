@@ -19,9 +19,7 @@ git config --list
 
 Name of the file containing these configurations:
 .gitconfig  
-
-You can open this file with any editor like:
-gedit .gitconfig
+You can open this file with any editor
 
 This file is present in the home directory
 
@@ -150,3 +148,9 @@ Now you can Push or pull your files.
 
 To push your commited files or folders or both:
 git push - origin master
+
+To create alias for commands:
+git config --global alias.[your alias] [command]
+For Eg:- to create an alias for unstaging a file type
+git config --global alias.unstage 'restore --staged --'
+
