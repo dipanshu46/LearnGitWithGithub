@@ -154,3 +154,8 @@ git config --global alias.[your alias] [command]
 For Eg:- to create an alias for unstaging a file type
 git config --global alias.unstage 'restore --staged --'
 
+To create a new branch from current branch:
+git checkout -b branchname
+
+To switch to a different branch:
+git checkout branchname
