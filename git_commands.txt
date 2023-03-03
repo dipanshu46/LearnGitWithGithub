@@ -1,108 +1,133 @@
-To install git on your linux:
-sudo apt-get install git -y
+1) To install git on your linux:
+$ sudo apt-get install git -y
 
-To check the version of the git:
-git --version
+2) To check the version of the git:
+$ git --version
 
-To get help with git:
-git help config
-git config --help
+3) To get help with git:
+$ git help config
+$ git config --help
 
-To add user name to your git: 
-git config --global user.name "your_user_name"
+4) To add user name to your git: 
+$ git config --global user.name "your_user_name"
 
-To add email id with git:
-git config --global user.email "your_email"
+5) To add email id to your git:
+$ git config --global user.email "your_email"
 
-To print all the configured attributes:
-git config --list
+6) To print all the configured attributes:
+$ git config --list
 
 Name of the file containing these configurations:
 .gitconfig  
 You can open this file with any editor
-
 This file is present in the home directory
 
-To initialize the folder to git: (first go inside the folder you want to initialize git in)
-git init
+7) To initialize the folder to git: (first go inside the folder you want to initialize git in)
+$ git init
 
 WORKING WITH REPOSITORY:-
 
-To clone a repository on your local machine:
-git clone (url of the repository from github page without using ())
+8) To clone a repository on your local machine:
+$ git clone (url of the repository from github page without using ())
 
-To get the status of your git: (it tells you about the new files that are added or need to be added to your repository)
-git status
+9) To get the status of your git: (it tells you about the new files that are added or need to be added to your repository)
+$ git status
 
-To add your file to git:
-git add filename
+10) To add your file to git:
+$ git add filename
 
-To commit your file with comments:
-git commit -m "Your comment, use -m to write comment followed by the comment in string" filename
+11) To commit your file with comments:
+$ git commit -m "Your comment, use -m to write comment followed by the comment in string" filename
 
-To directly stage your modified file and commit it: NOTE:- untracked files wont be staged and committed only for tracked files that are staged or yet to be staged
-git commit -a -m "comment"
+12) To directly stage your modified file and commit it: NOTE:- untracked files wont be staged and committed only for tracked files that are staged or yet to be staged
+$ git commit -a -m "comment"
 
-Now to transfer the files to your git repository:
-git push -u origin master
+13) To get the last commited status of the file:
+$ git checkout filename
+$ git checkout -f     	to checkout all files at once
 
-It will ask for user name and password for the account that is linked
+14) To add all the files to staging area or track at once: 
+$ git add --a
 
-To get the last commited status of the file:
-git checkout filename
-git checkout -f     	to checkout all files at once
+15) To compare the changes in the files in the current directory from that of in the staging area:
+$ git diff
 
-To add all the files to git at once: 
-git add --a
+16) Compares the files of the current staged area from the last commit:
+$ git diff --staged
 
-To compare the changes in the files from that of in the staging area:
-git diff
+17) To know all the commits that have been made till now:
+$ git log
 
-Compares the files of the current staged area from the last commit:
-git diff --staged
+18) To know all the commits with their differences: NOTE:- hit q to exit log preview
+$ git log -p
 
-To know all the commits that have been made till now:
-git log
+19) To know last 3 commits with their differences: NOTE:- any number can be checked
+$ git log -p -3
 
-To know all the commits with their differences: NOTE:- hit q to exit log preview
-git log -p
+20) To know all the commits in layout manner:
+$ git log --stat
 
-To know last 3 commits with their differences: NOTE:- any number can be checked
-git log -p -3
+21) To know all the commits in one line description:
+$ git log --pretty=oneline
 
-To know all the commits in statistical manner:
-git log --stat
+22) To know all the commits in short decription:
+$ git log --pretty=short
 
-To know all the commits in one line description:
-git log --pretty=oneline
+23) To know all the commits in short description with committer name:
+$ git log --pretty=full
 
-To know all the commits in short decription:
-git log --pretty=short
-
-To know all the commits in short description with committer name:
-git log --pretty=full
-
-To know logs with time filter:
-git log 2.days
-git log 2.weeks
-git log 2.months
-git log 2.years
+24) To know logs with time filter:
+$ git log 2.days
+$ git log 2.weeks
+$ git log 2.months
+$ git log 2.years
 
 To know other git log commands google : git scm usefull options for git log format
 
-To know according to a format: 
-git log --pretty=format: "%h -- %an"
+25) To know according to a format: 
+$ git log --pretty=format: "%h -- %an"
 
-To ammend a change and/or a comment into last commit:
-git commit --amend
-it will open the vim editor, write your comment and exit it. make sure you have added your modified file to staging area before commiting this way.
+26) To ammend a change and/or a comment into last commit:
+$ git commit --amend
+It will open the vim editor, write your comment and exit it or use the best -m method to write your comment. Make sure you have added your modified file to staging area before commiting this way.
 
-To restore a file contents that has been modified to the last commited file status:
-git checkout -- file_name
+27) To push your commited files or folders or both:
+$ git push - origin master
 
-To checkout multiple files at a time:
-git checkout -f
+28) To create alias for commands:
+$ git config --global alias.[your alias] [command]
+For Eg:- to create an alias for unstaging a file type
+$ git config --global alias.unstage 'restore --staged --'
 
+29) To create a new branch from the current branch:
+$ git checkout -b branchname
+
+30) To switch to a different branch:
+$ git checkout branchname
+
+31) To merge a branch to the current branch:
+$ git merge branchname
+
+32) To see all the branches in a git repository:
+$ git branch
+
+33) To see all the branches in a git repository with commit hash and message:
+$ git branch -v
+
+34) To see all the merged branches that are merged somewhere:
+$ git branch --merged
+
+35) To see all the merged branches that are not merged yet:
+$ git branch --no-merged
+
+36) To delete a branch:
+This line will work if the branch is already merged somewhere and has no new changes else it will raise an error
+$ git branch -d branchname
+
+This line will strictly delete the branch without checking anything
+$ git branch -D branchname
+
+Extras:
 To connect your git to a github repository:
 
 Step 1 : Create a gthub repository on the site.
@@ -145,20 +170,3 @@ it will show you your ssh key
 Take the key, Copy it and paste it where the ssh key was asked(go above on step 3 Create a new SSH key.)
 
 Now you can Push or pull your files.
-
-To push your commited files or folders or both:
-git push - origin master
-
-To create alias for commands:
-git config --global alias.[your alias] [command]
-For Eg:- to create an alias for unstaging a file type
-git config --global alias.unstage 'restore --staged --'
-
-To create a new branch from the current branch:
-git checkout -b branchname
-
-To switch to a different branch:
-git checkout branchname
-
-To merge a branch to the current branch:
-git merge branchname
