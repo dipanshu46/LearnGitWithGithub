@@ -92,7 +92,11 @@ $ git commit --amend
 It will open the vim editor, write your comment and exit it or use the best -m method to write your comment. Make sure you have added your modified file to staging area before commiting this way.
 
 27) To push your commited files or folders or both:
-$ git push - origin master
+$ git push -u origin master
+NOTE : Before pushing a branch to github make sure you are on that branch.
+
+To push your branch with a different name:
+$ git push -u origin branchname:desiredbranchname
 
 28) To create alias for commands:
 $ git config --global alias.[your alias] [command]
@@ -126,3 +130,8 @@ $ git branch -d branchname
 
 This line will strictly delete the branch without checking anything
 $ git branch -D branchname
+
+To delete a branch from github:
+$ git push -d origin branchname
+
+
